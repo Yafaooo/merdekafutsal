@@ -1,0 +1,454 @@
+<html class="scroll-smooth" lang="id">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <title>
+   Merdeka Futsal - Pendaftaran &amp; Pembayaran
+  </title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&amp;family=Roboto:wght@400;500&amp;display=swap" rel="stylesheet"/>
+  <style>
+   body {
+      font-family: 'Roboto', sans-serif;
+      background: #0f172a; /* dark navy background */
+      color: #f1f5f9; /* light text */
+    }
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Montserrat', sans-serif;
+      color: #fbbf24; /* amber/gold accent */
+    }
+    a {
+      transition: all 0.3s ease;
+    }
+    /* Custom scrollbar for modern look */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #1e293b;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #fbbf24;
+      border-radius: 10px;
+    }
+    /* Button gradient */
+    .btn-gradient {
+      background: linear-gradient(90deg, #fbbf24 0%, #f59e0b 100%);
+      color: #0f172a;
+      font-weight: 700;
+      box-shadow: 0 4px 15px rgba(251, 191, 36, 0.5);
+    }
+    .btn-gradient:hover {
+      background: linear-gradient(90deg, #f59e0b 0%, #fbbf24 100%);
+      color: #0f172a;
+      box-shadow: 0 6px 20px rgba(251, 191, 36, 0.7);
+    }
+    /* Card style */
+    .card {
+      background: #1e293b;
+      border-radius: 1rem;
+      box-shadow: 0 8px 30px rgba(251, 191, 36, 0.3);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 40px rgba(251, 191, 36, 0.5);
+    }
+    /* Details summary style */
+    details summary {
+      cursor: pointer;
+      list-style: none;
+      font-weight: 700;
+      font-size: 1.125rem;
+      color: #fbbf24;
+      outline: none;
+    }
+    details[open] summary::after {
+      content: "▲";
+      float: right;
+      font-size: 1rem;
+      margin-left: 0.5rem;
+    }
+    details summary::after {
+      content: "▼";
+      float: right;
+      font-size: 1rem;
+      margin-left: 0.5rem;
+    }
+    details p {
+      margin-top: 0.75rem;
+      color: #cbd5e1;
+      line-height: 1.6;
+    }
+    /* Input focus */
+    input:focus, select:focus, textarea:focus {
+      outline: none;
+      box-shadow: 0 0 8px #fbbf24;
+      border-color: #fbbf24;
+      background-color: #1e293b;
+      color: #fbbf24;
+    }
+    /* Scroll snap for hero slider text */
+    #home {
+      scroll-snap-align: start;
+    }
+  </style>
+ </head>
+ <body class="flex flex-col min-h-screen">
+  <!-- Navbar -->
+  <nav class="bg-[#1e293b] shadow-lg sticky top-0 z-50 border-b border-yellow-400/30">
+   <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+    <a class="text-3xl font-bold text-yellow-400 flex items-center space-x-3" href="#">
+     <img alt="Logo Merdeka Futsal, stylized MF letters in gold with dark background" class="rounded-full border-2 border-yellow-400 shadow-lg" height="48" src="https://storage.googleapis.com/a1aa/image/49738cc4-7324-42c2-c5f6-606848bbf0d2.jpg" width="48"/>
+     <span class="tracking-widest drop-shadow-lg">
+      MERDEKA FUTSAL
+     </span>
+    </a>
+    <ul class="hidden md:flex space-x-10 font-semibold text-gray-300 tracking-wide">
+     <li>
+      <a class="hover:text-yellow-400 transition" href="#home">
+       Beranda
+      </a>
+     </li>
+     <li>
+      <a class="hover:text-yellow-400 transition" href="#about">
+       Tentang
+      </a>
+     </li>
+     <li>
+      <a class="hover:text-yellow-400 transition" href="#register">
+       Daftar
+      </a>
+     </li>
+     <li>
+      <a class="hover:text-yellow-400 transition" href="#faq">
+       FAQ
+      </a>
+     </li>
+     <li>
+      <a class="hover:text-yellow-400 transition" href="#contact">
+       Kontak
+      </a>
+     </li>
+    </ul>
+    <button aria-label="Toggle menu" class="md:hidden text-yellow-400 focus:outline-none focus:ring-2 focus:ring-yellow-400" id="mobile-menu-button">
+     <i class="fas fa-bars fa-lg"></i>
+    </button>
+   </div>
+   <div class="hidden md:hidden bg-[#1e293b] px-6 pb-6 border-t border-yellow-400/30" id="mobile-menu">
+    <ul class="space-y-4 font-semibold text-gray-300 tracking-wide">
+     <li>
+      <a class="block hover:text-yellow-400 transition" href="#home">
+       Beranda
+      </a>
+     </li>
+     <li>
+      <a class="block hover:text-yellow-400 transition" href="#about">
+       Tentang
+      </a>
+     </li>
+     <li>
+      <a class="block hover:text-yellow-400 transition" href="#register">
+       Daftar
+      </a>
+     </li>
+     <li>
+      <a class="block hover:text-yellow-400 transition" href="#faq">
+       FAQ
+      </a>
+     </li>
+     <li>
+      <a class="block hover:text-yellow-400 transition" href="#contact">
+       Kontak
+      </a>
+     </li>
+    </ul>
+   </div>
+  </nav>
+  <!-- Hero Section with Slider -->
+  <section class="relative max-w-7xl mx-auto px-6 py-20 md:py-32 rounded-lg overflow-hidden" id="home">
+   <div class="relative h-96 md:h-[450px] rounded-lg shadow-2xl overflow-hidden border-4 border-yellow-400">
+    <img alt="Modern futsal court with players playing energetically under bright lights, vibrant atmosphere" class="absolute inset-0 w-full h-full object-cover rounded-lg opacity-100 transition-opacity duration-1000" id="slide1" src="https://storage.googleapis.com/a1aa/image/0fe7702c-7728-42e3-b025-b2b35d772597.jpg" style="opacity:1"/>
+    <img alt="Futsal players celebrating a goal with team spirit on an indoor futsal court, joyful and dynamic" class="absolute inset-0 w-full h-full object-cover rounded-lg opacity-0 transition-opacity duration-1000" id="slide2" src="https://storage.googleapis.com/a1aa/image/e864e5d3-cc05-4184-5063-371259cc4ea6.jpg" style="opacity:0"/>
+    <img alt="Close up of futsal ball on the court with bright stadium lights in background" class="absolute inset-0 w-full h-full object-cover rounded-lg opacity-0 transition-opacity duration-1000" id="slide3" src="https://storage.googleapis.com/a1aa/image/3a7a7a3a-1a2b-4c3d-8e9f-123456789abc.jpg" style="opacity:0"/>
+   </div>
+   <div class="relative mt-12 max-w-3xl bg-[#1e293b]/90 backdrop-blur-md rounded-xl p-8 shadow-lg border border-yellow-400">
+    <h1 class="text-5xl font-extrabold leading-tight drop-shadow-lg tracking-wide">
+     Merdeka Futsal
+    </h1>
+    <h2 class="text-3xl font-semibold mt-2 tracking-wide text-yellow-300 drop-shadow-md">
+     Tempat Terbaik Bermain &amp; Berkompetisi
+    </h2>
+    <p class="text-lg md:text-xl opacity-90 mt-6 drop-shadow-md text-gray-300 leading-relaxed">
+     Daftar sekarang dan nikmati fasilitas futsal modern dengan harga terjangkau. 
+     Pengguna pertama dapat mendaftar gratis! Pilih paket VVIP untuk pengalaman eksklusif dan layanan premium.
+    </p>
+    <a class="inline-block btn-gradient px-10 py-4 rounded-full mt-8 shadow-xl hover:scale-105 transform-gpu" href="#register" role="button" aria-label="Daftar Sekarang">
+     Daftar Sekarang
+    </a>
+   </div>
+  </section>
+  <!-- About Section -->
+  <section class="max-w-7xl mx-auto px-6 py-20 md:py-28 flex flex-col md:flex-row items-center gap-16" id="about">
+   <div class="md:w-1/2 card p-6">
+    <img alt="Futsal players celebrating a goal with team spirit on an indoor futsal court, joyful and dynamic" class="rounded-xl shadow-lg w-full" height="400" src="https://storage.googleapis.com/a1aa/image/e864e5d3-cc05-4184-5063-371259cc4ea6.jpg" width="600"/>
+   </div>
+   <div class="md:w-1/2 space-y-8">
+    <h2 class="text-4xl font-bold text-yellow-400 tracking-wide drop-shadow-lg">
+     Tentang Merdeka Futsal
+    </h2>
+    <p class="text-gray-300 text-lg leading-relaxed tracking-wide">
+     Merdeka Futsal adalah pusat futsal modern yang menyediakan lapangan berkualitas tinggi, 
+     fasilitas lengkap, dan layanan terbaik untuk semua kalangan. Kami berkomitmen untuk 
+     memberikan pengalaman bermain futsal yang menyenangkan dan profesional.
+    </p>
+    <p class="text-gray-300 text-lg leading-relaxed tracking-wide">
+     Dengan berbagai paket pendaftaran, termasuk paket VVIP dengan fasilitas eksklusif, 
+     kami memastikan setiap pemain mendapatkan layanan terbaik. Pengguna pertama mendapatkan 
+     pendaftaran gratis sebagai bentuk apresiasi kami.
+    </p>
+   </div>
+  </section>
+  <!-- Registration Section -->
+  <section class="bg-[#1e293b] shadow-2xl py-20 px-8 max-w-4xl mx-auto rounded-3xl mb-24 border-4 border-yellow-400" id="register">
+   <h2 class="text-4xl font-bold text-yellow-400 mb-12 text-center tracking-wide drop-shadow-lg">
+    Formulir Pendaftaran
+   </h2>
+   <form class="space-y-8" id="registrationForm" novalidate="">
+    <div>
+     <label class="block text-gray-300 font-semibold mb-3 tracking-wide" for="fullname">
+      Nama Lengkap
+     </label>
+     <input class="w-full border border-yellow-400 rounded-xl px-5 py-4 bg-transparent placeholder-yellow-300 text-yellow-300 focus:ring-4 focus:ring-yellow-400 focus:border-yellow-400" id="fullname" name="fullname" placeholder="Masukkan nama lengkap Anda" required="" type="text"/>
+    </div>
+    <div>
+     <label class="block text-gray-300 font-semibold mb-3 tracking-wide" for="email">
+      Email
+     </label>
+     <input class="w-full border border-yellow-400 rounded-xl px-5 py-4 bg-transparent placeholder-yellow-300 text-yellow-300 focus:ring-4 focus:ring-yellow-400 focus:border-yellow-400" id="email" name="email" placeholder="contoh@email.com" required="" type="email"/>
+    </div>
+    <div>
+     <label class="block text-gray-300 font-semibold mb-3 tracking-wide" for="phone">
+      Nomor Telepon
+     </label>
+     <input class="w-full border border-yellow-400 rounded-xl px-5 py-4 bg-transparent placeholder-yellow-300 text-yellow-300 focus:ring-4 focus:ring-yellow-400 focus:border-yellow-400" id="phone" name="phone" pattern="^\d{9,15}$" placeholder="082272463816" required="" type="tel" value="082272463816"/>
+    </div>
+    <div>
+     <label class="block text-gray-300 font-semibold mb-3 tracking-wide" for="package">
+      Paket Pendaftaran
+     </label>
+     <select class="w-full border border-yellow-400 rounded-xl px-5 py-4 bg-transparent placeholder-yellow-300 text-yellow-300 focus:ring-4 focus:ring-yellow-400 focus:border-yellow-400" id="package" name="package" required="">
+      <option disabled="" selected="" value="">
+       Pilih paket
+      </option>
+      <option value="gratis">
+       Gratis (Pengguna Pertama)
+      </option>
+      <option value="reguler">
+       Reguler - Rp 50.000
+      </option>
+      <option value="vvip">
+       VVIP - Rp 150.000 (Fasilitas Eksklusif)
+      </option>
+     </select>
+    </div>
+    <div class="hidden space-y-8" id="paymentSection">
+     <h3 class="text-yellow-400 font-semibold text-2xl tracking-wide">
+      Metode Pembayaran Paket VVIP
+     </h3>
+     <p class="text-gray-300 text-lg tracking-wide leading-relaxed">
+      Silakan lakukan pembayaran sebesar
+      <span class="font-bold text-yellow-300">
+       Rp 150.000
+      </span>
+      melalui salah satu metode berikut:
+     </p>
+     <ul class="list-disc list-inside text-gray-300 space-y-3 tracking-wide text-lg">
+      <li>
+       Transfer Bank BCA: <span class="font-semibold text-yellow-300">123-456-7890</span> a.n Merdeka Futsal
+      </li>
+      <li>
+       Virtual Account BRI (a.n Yafao Mabe Lamboe): <span class="font-semibold text-yellow-300">069501011265505</span>
+      </li>
+      <li>
+       QRIS (Scan QR untuk pembayaran cepat)
+       <div class="mt-3 flex justify-center">
+        <img alt="QRIS payment code for Merdeka Futsal VVIP package payment" class="w-36 h-36 object-contain rounded-xl shadow-lg border-2 border-yellow-400" height="144" src="shop.jpg" width="144"/>
+       </div>
+      </li>
+      <li>
+       E-Wallet: DANA dan OVO ke nomor <span class="font-semibold text-yellow-300">082272463816</span>
+      </li>
+     </ul>
+     <label class="block text-gray-300 font-semibold mb-3 mt-6 tracking-wide" for="paymentProof">
+      Upload Bukti Pembayaran
+     </label>
+     <input accept="image/*" class="w-full border border-yellow-400 rounded-xl px-5 py-3 bg-transparent placeholder-yellow-300 text-yellow-300 focus:ring-4 focus:ring-yellow-400 focus:border-yellow-400" id="paymentProof" name="paymentProof" type="file"/>
+    </div>
+    <button class="w-full btn-gradient font-extrabold py-4 rounded-full shadow-xl hover:scale-105 transform-gpu tracking-wide text-lg" type="submit">
+     Daftar Sekarang
+    </button>
+   </form>
+   <p class="mt-8 text-center font-semibold tracking-wide text-yellow-400" id="formMessage"></p>
+  </section>
+  <!-- FAQ Section -->
+  <section class="max-w-7xl mx-auto px-6 py-20 md:py-28" id="faq">
+   <h2 class="text-4xl font-bold text-yellow-400 mb-14 text-center tracking-wide drop-shadow-lg">
+    Pertanyaan Umum (FAQ)
+   </h2>
+   <div class="space-y-6 max-w-4xl mx-auto">
+    <details class="card p-6 cursor-pointer">
+     <summary>
+      Bagaimana cara mendaftar di Merdeka Futsal?
+     </summary>
+     <p>
+      Anda dapat mendaftar melalui formulir pendaftaran di website ini dengan mengisi data lengkap dan memilih paket yang diinginkan.
+     </p>
+    </details>
+    <details class="card p-6 cursor-pointer">
+     <summary>
+      Apakah ada biaya untuk pengguna pertama?
+     </summary>
+     <p>
+      Pengguna pertama mendapatkan pendaftaran gratis sebagai bentuk apresiasi dari kami.
+     </p>
+    </details>
+    <details class="card p-6 cursor-pointer">
+     <summary>
+      Apa saja fasilitas paket VVIP?
+     </summary>
+     <p>
+      Paket VVIP menyediakan fasilitas eksklusif seperti lapangan prioritas, perlengkapan lengkap, dan layanan khusus selama bermain.
+     </p>
+    </details>
+    <details class="card p-6 cursor-pointer">
+     <summary>
+      Bagaimana cara melakukan pembayaran paket VVIP?
+     </summary>
+     <p>
+      Setelah memilih paket VVIP, Anda harus mengunggah bukti pembayaran melalui formulir pendaftaran. Pembayaran dapat dilakukan melalui transfer bank, virtual account BRI, QRIS, atau e-wallet DANA dan OVO.
+     </p>
+    </details>
+    <details class="card p-6 cursor-pointer">
+     <summary>
+      Apakah website ini bisa digunakan sebagai aplikasi?
+     </summary>
+     <p>
+      Website ini sudah dirancang responsif dan dapat diakses dengan baik di perangkat mobile. Anda juga dapat menyimpannya sebagai aplikasi web progresif (PWA) di ponsel Anda.
+     </p>
+    </details>
+   </div>
+  </section>
+  <!-- Contact Section -->
+  <section class="bg-[#1e293b] py-20 px-6 border-t-4 border-yellow-400" id="contact">
+   <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between gap-16">
+    <div class="md:w-1/2 space-y-8">
+     <h2 class="text-4xl font-bold text-yellow-400 tracking-wide drop-shadow-lg">
+      Hubungi Kami
+     </h2>
+     <p class="text-yellow-300 max-w-md leading-relaxed tracking-wide text-lg">
+      Merdeka Futsal siap membantu Anda. Jika ada pertanyaan atau butuh informasi lebih lanjut, jangan ragu untuk menghubungi kami.
+     </p>
+     <ul class="space-y-5 text-yellow-300 text-lg tracking-wide">
+      <li class="flex items-center gap-4">
+       <i class="fas fa-phone-alt text-yellow-400 text-xl"></i>
+       <span>0822-7246-3816</span>
+      </li>
+      <li class="flex items-center gap-4">
+       <i class="fas fa-envelope text-yellow-400 text-xl"></i>
+       <span>info@merdekafutsal.id</span>
+      </li>
+      <li class="flex items-center gap-4">
+       <i class="fas fa-map-marker-alt text-yellow-400 text-xl"></i>
+       <span>Jalan Marelan No.21, Medan Helvetia, Indonesia</span>
+      </li>
+     </ul>
+    </div>
+    <div class="md:w-1/2 card p-4">
+     <img alt="Contact support team helping customers with friendly smiles in a modern office environment" class="rounded-xl shadow-lg w-full" height="400" src="https://storage.googleapis.com/a1aa/image/1cdb5b20-538a-44bf-fd17-e04c5d5a6e07.jpg" width="600"/>
+    </div>
+   </div>
+  </section>
+  <!-- Footer -->
+  <footer class="bg-[#111827] text-yellow-400 py-8 text-center text-sm tracking-wide border-t border-yellow-400/30">
+   © 2024 Merdeka Futsal. Hak Cipta Yafao.
+  </footer>
+  <script>
+   // Mobile menu toggle
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    mobileMenuButton.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    // Show/hide payment section based on package selection
+    const packageSelect = document.getElementById('package');
+    const paymentSection = document.getElementById('paymentSection');
+    const paymentProofInput = document.getElementById('paymentProof');
+
+    packageSelect.addEventListener('change', () => {
+      if (packageSelect.value === 'vvip') {
+        paymentSection.classList.remove('hidden');
+        paymentProofInput.setAttribute('required', 'required');
+      } else {
+        paymentSection.classList.add('hidden');
+        paymentProofInput.removeAttribute('required');
+        paymentProofInput.value = '';
+      }
+    });
+
+    // Form submission handling
+    const form = document.getElementById('registrationForm');
+    const formMessage = document.getElementById('formMessage');
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      // Basic validation
+      if (!form.checkValidity()) {
+        formMessage.textContent = 'Mohon lengkapi semua data dengan benar.';
+        formMessage.classList.add('text-red-500');
+        formMessage.classList.remove('text-green-500');
+        return;
+      }
+
+      // If VVIP, check if payment proof uploaded
+      if (packageSelect.value === 'vvip' && paymentProofInput.files.length === 0) {
+        formMessage.textContent = 'Mohon unggah bukti pembayaran untuk paket VVIP.';
+        formMessage.classList.add('text-red-500');
+        formMessage.classList.remove('text-green-500');
+        return;
+      }
+
+      // Simulate form submission success
+      formMessage.textContent = 'Pendaftaran berhasil! Terima kasih telah mendaftar di Merdeka Futsal. Silakan lakukan pembayaran sesuai metode yang tersedia jika memilih paket VVIP.';
+      formMessage.classList.remove('text-red-500');
+      formMessage.classList.add('text-green-500');
+
+      // Reset form after submission
+      form.reset();
+      paymentSection.classList.add('hidden');
+    });
+
+    // Slider logic
+    const slides = [
+      document.getElementById('slide1'),
+      document.getElementById('slide2'),
+      document.getElementById('slide3')
+    ];
+    let currentSlide = 0;
+
+    function showSlide(index) {
+      slides.forEach((slide, i) => {
+        slide.style.opacity = i === index ? '1' : '0';
+      });
+    }
+
+    setInterval(() => {
+      currentSlide = (currentSlide + 1) % slides.length;
+      showSlide(currentSlide);
+    }, 6000);
+  </script>
+ </body>
+</html>
